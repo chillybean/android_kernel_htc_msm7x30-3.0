@@ -91,6 +91,7 @@ obj-$(CONFIG_VB6801) += vb6801.o
 obj-$(CONFIG_IMX072) += imx072.o imx072_reg.o
 obj-$(CONFIG_WEBCAM_OV9726) += ov9726.o ov9726_reg.o
 obj-$(CONFIG_WEBCAM_OV7692) += ov7692.o
+obj-$(CONFIG_OV9665) += ov9665.o ov9665_reg.o
 obj-$(CONFIG_MT9D112) += mt9d112.o mt9d112_reg.o
 
 obj-$(CONFIG_MT9D113) += mt9d113.o mt9d113_reg.o

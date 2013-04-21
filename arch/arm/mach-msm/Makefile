@@ -163,7 +163,6 @@ obj-$(CONFIG_ARCH_MSM7X27A) += dal_axi.o
 obj-$(CONFIG_MSM_ADSP) += qdsp5/
 obj-$(CONFIG_MSM7KV2_AUDIO) += qdsp5v2/
 obj-$(CONFIG_MSM7KV2_AUDIO) += htc_acoustic_7x30.o htc_acdb_7x30.o
-
 obj-$(CONFIG_MSM_QDSP6) += qdsp6/
 obj-$(CONFIG_MSM8X60_AUDIO) += qdsp6v2_1x/
 obj-$(CONFIG_MSM_AUDIO_QDSP6) += qdsp6v2/
@@ -205,6 +204,7 @@ obj-$(CONFIG_ARCH_MSM8X60) += rpm-regulator.o rpm-regulator-8660.o
 obj-$(CONFIG_ARCH_MSM8X60) += footswitch-8x60.o
 obj-$(CONFIG_MSM8X60_AUDIO) += htc_acoustic_8x60.o
 obj-$(CONFIG_ARCH_MSM7X27A) += htc_acoustic.o
+obj-$(CONFIG_QSD_AUDIO)  += htc_acoustic_qsd.o
 ifdef CONFIG_MSM_SUBSYSTEM_RESTART
 	obj-y += subsystem_notif.o
 	obj-y += subsystem_restart.o
@@ -520,10 +520,41 @@ obj-$(CONFIG_MACH_KINGDOM) += board-kingdom-mmc.o board-kingdom-wifi.o board-com
 else
 obj-$(CONFIG_MACH_KINGDOM) += board-kingdom-mmc.o board-kingdom-wifi.o
 endif
+obj-$(CONFIG_MACH_KINGDOM) += htc_bdaddress.o board-kingdom-rfkill.o
+
+# QSD8X50
+obj-$(CONFIG_ARCH_QSD8X50) += devices_htc.o htc_wifi_nvs.o htc_awb_cal.o
+
+obj-$(CONFIG_MACH_SUPERSONIC) += board-supersonic.o display/supersonic-panel.o
+obj-$(CONFIG_MACH_SUPERSONIC) += board-supersonic-keypad.o board-supersonic-mmc.o
+obj-$(CONFIG_MACH_SUPERSONIC) += board-supersonic-rfkill.o board-supersonic-audio.o
+obj-$(CONFIG_MACH_SUPERSONIC) += board-supersonic-wifi.o board-supersonic-microp.o
+obj-$(CONFIG_MACH_SUPERSONIC) += board-supersonic-tpa2018d1.o board-supersonic-tpa6130.o
+obj-$(CONFIG_MACH_SUPERSONIC) += htc_bdaddress.o
+obj-$(CONFIG_MACH_SUPERSONIC) += board-supersonic-flashlight.o
+
+obj-$(CONFIG_MACH_INCREDIBLEC) += board-incrediblec.o display/incrediblec-panel.o
+obj-$(CONFIG_MACH_INCREDIBLEC) += board-incrediblec-keypad.o board-incrediblec-mmc.o
+obj-$(CONFIG_MACH_INCREDIBLEC) += board-incrediblec-rfkill.o board-incrediblec-audio.o
+obj-$(CONFIG_MACH_INCREDIBLEC) += board-incrediblec-wifi.o board-incrediblec-tv.o
+obj-$(CONFIG_MACH_INCREDIBLEC) += board-incrediblec-microp.o htc_bdaddress.o
+obj-$(CONFIG_MACH_INCREDIBLEC) += proc_engineerid.o board-incrediblec-tpa6130.o
+
+obj-$(CONFIG_MACH_BRAVO) += board-bravo.o display/bravo-panel.o
+obj-$(CONFIG_MACH_BRAVO) += board-bravo-keypad.o board-bravo-mmc.o
+obj-$(CONFIG_MACH_BRAVO) += board-bravo-rfkill.o
+obj-$(CONFIG_MACH_BRAVO) += board-bravo-wifi.o board-bravo-audio.o
+obj-$(CONFIG_MACH_BRAVO) += board-bravo-microp.o
+obj-$(CONFIG_MACH_BRAVO) += board-bravo-tpa2018d1.o board-bravo-smb329.o
+
+obj-$(CONFIG_MACH_BRAVOC) += board-bravo.o display/bravo-panel.o
+obj-$(CONFIG_MACH_BRAVOC) += board-bravo-keypad.o board-bravo-mmc.o
+obj-$(CONFIG_MACH_BRAVOC) += board-bravo-rfkill.o
+obj-$(CONFIG_MACH_BRAVOC) += board-bravo-wifi.o board-bravo-audio.o
+obj-$(CONFIG_MACH_BRAVOC) += board-bravo-microp.o
+obj-$(CONFIG_MACH_BRAVOC) += board-bravo-tpa2018d1.o board-bravo-smb329.o
 
 obj-$(CONFIG_ARCH_MSM_FLASHLIGHT) += msm_flashlight.o
-
-obj-$(CONFIG_MACH_KINGDOM) += htc_bdaddress.o board-kingdom-rfkill.o
 
 CFLAGS_msm_vibrator.o += -Idrivers/staging/android
 
@@ -534,6 +565,7 @@ obj-$(CONFIG_HTC_BATT_CORE) += htc_battery_core.o
 obj-$(CONFIG_HTC_BATT8x60) += htc_battery_8x60.o
 
 obj-$(CONFIG_HTC_PWRSINK) += htc_pwrsink.o
+obj-$(CONFIG_HTC_35MM_JACK) += htc_35mm_jack.o
 obj-$(CONFIG_HTC_HEADSET_MGR) += htc_headset_mgr.o
 obj-$(CONFIG_HTC_HEADSET_H2W) += htc_headset_h2w.o
 obj-$(CONFIG_HTC_HEADSET_GPIO) += htc_headset_gpio.o

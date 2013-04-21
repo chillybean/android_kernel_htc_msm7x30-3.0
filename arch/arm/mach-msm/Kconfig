@@ -527,6 +527,48 @@ config MACH_SAPPHIRE
 	default n
 	bool "Sapphire"
 
+config MACH_MAHIMAHI
+	depends on ARCH_QSD8X50
+	default y
+	bool "Mahi-Mahi"
+	help
+	  Select this to support the Mahi-Mahi device
+
+config MACH_BRAVO
+	depends on ARCH_QSD8X50
+	default y
+	bool "Bravo(GSM)"
+	help
+	  Select this to support the Bravo(GSM) device
+
+config MACH_BRAVOC
+	depends on ARCH_QSD8X50
+	default y
+	bool "Bravo(CDMA)"
+	help
+	  Select this to support the Bravo(CDMA) device
+
+config MACH_INCREDIBLE
+	depends on ARCH_QSD8X50
+	default n
+	bool "Incredible"
+	help
+	  Select this to support the Incredible device
+
+config MACH_INCREDIBLEC
+	depends on ARCH_QSD8X50
+	default n
+	bool "IncredibleC"
+	help
+	  Select this to support the IncredibleC device
+
+config MACH_SUPERSONIC
+	depends on ARCH_QSD8X50
+	default n
+	bool "Supersonic (HTC EVO 4G)"
+	help
+	  Select this to support the Supersonic device
+
 config MACH_QSD8X50_SURF
 	depends on ARCH_QSD8X50
 	depends on MSM_SOC_REV_NONE
@@ -1153,6 +1195,12 @@ config HTC_HEADSET
 	 Provides support for detecting HTC 2 wire devices, such as wired
 	 headset, on the trout platform. Can be used with the msm serial
 	 debugger, but not with serial console.
+
+config HTC_35MM_JACK
+	bool "HTC 3.5mm headset jack"
+	default n
+	help
+	 Provides support for 3.5mm headset jack devices, like wired headsets.
 
 config TROUT_BATTCHG
 	depends on MACH_TROUT && POWER_SUPPLY
@@ -1866,6 +1914,12 @@ config MICROP_COMMON
 	depends on I2C
 	help
 	  HTC Microp-P support.
+
+config HTC_35MM_JACK
+	bool "HTC 3.5mm headset jack"
+	default n
+	help
+	 Provides support for 3.5mm headset jack devices, like wired headsets.
 
 config HTC_HEADSET_MGR
 	tristate "HTC headset manager driver"
