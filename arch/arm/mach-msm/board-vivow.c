@@ -3386,6 +3386,11 @@ static struct platform_device *devices[] __initdata = {
 */
 	&pm8058_leds,
 
+#define MSM_ION_CAMERA_SIZE		0x2800000
+#define MSM_ION_ROTATOR_SIZE	0x2C0000
+#define MSM_ION_SF_SIZE			0x2000000
+#define MSM_ION_AUDIO_SIZE		0x700000
+
 };
 
 static struct msm_gpio msm_i2c_gpios_hw[] = {
