@@ -39,6 +39,12 @@
 #define MSM_PMEM_ADSP2_SIZE     0x002C0000
 #define MSM_FB_SIZE		0x00500000
 
+#ifdef CONFIG_ION_MSM
+#define MSM_ION_CAMERA_SIZE     0x019A0000
+#define MSM_ION_SF_SIZE     MSM_PMEM_SF_SIZE
+#define MSM_ION_HEAP_NUM    3
+#endif
+
 /* GPIO definition */
 #define VIVOW_PMIC_GPIO_INT		(27)
 
